@@ -1,13 +1,28 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log('Login details:', { email, password });
+
+    try {
+      const response = await axios.post('http://localhost:3000/login', {
+        email: email,
+        password: password,
+      });
+
+      // Store the token in local storage
+      localStorage.setItem('token', response.data.token);
+
+      alert("Login successful!");
+      // Redirect to another page or perform other actions
+    } catch (error) {
+      console.error("There was an error logging in!", error);
+      alert("Invalid email or password");
+    }
   };
 
   return (
