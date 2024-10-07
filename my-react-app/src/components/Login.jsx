@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // For navigation
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate(); // Hook for navigation
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,7 +20,8 @@ const Login = () => {
       localStorage.setItem('token', response.data.token);
 
       alert("Login successful!");
-      // Redirect to another page or perform other actions
+      // Redirect to dashboard or home page
+      navigate('/dashboard');
     } catch (error) {
       console.error("There was an error logging in!", error);
       alert("Invalid email or password");

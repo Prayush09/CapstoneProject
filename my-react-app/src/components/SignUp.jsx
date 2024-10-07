@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+{/* Create a Preferences page which will be used in the ml model */}
 const SignUp = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -73,6 +73,7 @@ const SignUp = () => {
           />
         </div>
         <button type="submit">Sign Up</button>
+             {/*Vrishin - Add a route after the submit button is clicked so it moves to your preferences page automatically */}
       </form>
     </div>
   );

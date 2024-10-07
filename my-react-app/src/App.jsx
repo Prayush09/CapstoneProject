@@ -7,6 +7,7 @@ import Review from './components/Review';
 import Blog from './components/Blog';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import Dashboard from './components/Dashboard';
 import './App.css';
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/review" element={<Review />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+   
       </Routes>
     </Router>
   );

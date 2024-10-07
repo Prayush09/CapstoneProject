@@ -1,15 +1,22 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import express from 'express';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
+import cors from 'cors';
+import { userModel } from 'db.js';
+
+
+const mongoose = require('mongoose')
 
 const app = express();
-const JWT_SECRETKEY = "ThisisourCapstoneProject7864";
+app.use(cors());
+const JWT_SECRETKEY = process.env.JWT_userModel_Password;
 
 app.use(express.json()); // JSON parser 
 
-const users = []; // our database to store users for now
-
-// Authentication middleware to verify JWT and authorize users
+// Authentication middleware to verify JWT and authorize userModels
 function authenticateToken(req, res, next) {
     const authHeader = req.headers.authorization; // Get the Authorization header
     const token = authHeader && authHeader.split(' ')[1]; // Split "Bearer <token>" and take the token part
@@ -22,7 +29,7 @@ function authenticateToken(req, res, next) {
 
     try {
         const decodedInformation = jwt.verify(token, JWT_SECRETKEY); // Verify the token
-        req.username = decodedInformation.username; // Attach decoded info to request
+        req.userModelname = decodedInformation.userModelname; // Attach decoded info to request
         next(); // Call the next middleware or route handler
     } catch (err) {
         res.status(401).send({
@@ -32,44 +39,63 @@ function authenticateToken(req, res, next) {
 }
 
 app.post('/signup', async (req, res) => {
-    const { username, email, password } = req.body;
+    const { userModelname, email, password, country, state, city, phoneNo } = req.body;
 
-    // Check if the user has already signed up
-    if (users.find(u => u.username === username)) {
-        return res.status(200).json({
-            message: "You have already signed up"
+    // Check if the userModel has already signed up with the same userModelname or email
+    const existinguserModel = await userModel.findOne({ 
+          email 
+    });
+
+    if (existinguserModel) {
+        return res.status(409).json({
+            message: "Email already in use"
         });
     }
 
+    // Check if password meets minimum length requirement
     if (password.length < 6) {
-        return res.json({
-            message: "Enter a longer password!"
+        return res.status(400).json({
+            message: "Password must be at least 6 characters long"
         });
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10);
+    try {
+        // Hash password before saving
+        const hashedPassword = await bcrypt.hash(password, 10);
 
-    users.push({
-        username,
-        email,
-        password: hashedPassword
-    });
+        // Create a new userModel
+        const newuserModel = await userModel.create({
+            userModelname, 
+            email,
+            password: hashedPassword,
+            country,
+            state,
+            city,
+            phoneNo
+        });
 
-    res.json({
-        message: "You have successfully signed up"
-    });
+        res.status(201).json({
+            message: "You have successfully signed up",
+            userModel: newuserModel
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: "Error signing up userModel",
+            error: error.message
+        });
+    }
 });
 
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
-    // Find the user in the "database"
-    const user = users.find(u => u.email === email);
+    // Find the userModel in the "database"
+    const userModel = userModels.find(u => u.email === email);
 
-    // If user exists and password matches, generate token
-    if (user && await bcrypt.compare(password, user.password)) {
-        // Create a token with email and username as payload
-        const token = jwt.sign({ email: user.email, username: user.username }, JWT_SECRETKEY);
+    // If userModel exists and password matches, generate token
+    if (userModel && await bcrypt.compare(password, userModel.password)) {
+        // Create a token with email and userModelname as payload
+        const token = jwt.sign({ email: userModel.email, userModelname: userModel.userModelname }, JWT_SECRETKEY);
 
         // Send success response with token
         res.json({
@@ -84,10 +110,23 @@ app.post('/login', async (req, res) => {
     }
 });
 
+app.get('/protected-route', authenticateToken, function(req, res){
+    res.json({
+      message: "This is protected data",
+      userModelname: req.userModelname,
+    });
+  });
+
 //after this point, all the routes will the authenticate middleware
 //to ensure that the correct person is using the website.
 
-app.listen(3000, () => {
-    console.log("Server started on port 3000");
-});
+async function main(){
+    await mongoose.connect(process.env.MONGO_URL);
+    app.listen(3000, () => {
+        console.log("Server started on port 3000");
+    });
+}
+
+main();
+
 
