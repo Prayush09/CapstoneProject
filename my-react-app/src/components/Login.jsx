@@ -16,7 +16,7 @@ const Login = () => {
         password: password,
       });
 
-      // Store the token in local storage
+      // Use cookie-based JWT instead of localStorage.
       localStorage.setItem('token', response.data.token);
 
       alert("Login successful!");

@@ -1,11 +1,12 @@
 import React from 'react';
 import '../Home.css'
+import {Link} from 'react-router-dom'
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
-        <a className="navbar-brand" href="#">HOMEEY</a>
+        <Link className="navbar-brand" to="/">HOMEEY</Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -20,26 +21,23 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" href="#">Home</a>
+              <Link className="nav-link" to="/property">Property</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Property</a>
+              <Link className="nav-link active" to="/about">About</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">About</a>
+              <Link className="nav-link" to="/review">Review</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Review</a>
+              <Link className="nav-link" to="/blog">Blog</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Blog</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Contact</a>
+              <a className="nav-link" to="">Contact</a>
             </li>
           </ul>
-          <a className="btn nav-signin me-2" href="#">Sign in</a>
-          <a className="btn nav-signup" href="#">Sign up</a>
+          <Link className="btn nav-signin me-2" to="login">Sign in</Link>
+          <Link className="btn nav-signup" to="/signup">Sign up</Link>
         </div>
       </div>
     </nav>

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from 'mongoose'
 console.log("Connected to DB")
 
 const Schema = mongoose.Schema;
@@ -34,10 +34,6 @@ const preferencesSchema = new Schema({
     }]
 })
 
-const userModel = mongoose.model('user', userSchema);
-const preferencesOfUser = mongoose.model('prefUser', preferencesSchema);
+export const userModel = mongoose.model('user', userSchema);
+export const preferenceModel = mongoose.model('prefUser', preferencesSchema);
 
-module.exports = {
-    userModel,
-    preferencesOfUser
-};
