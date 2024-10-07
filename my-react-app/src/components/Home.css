@@ -1,5 +1,390 @@
-body{
+/*Dashboard page*/
+/* Global Styles */
+body {
+    background-color: #1b1e2b !important;
+    -webkit-text-fill-color: #fff;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Navbar Styles */
+  .navbar-brand {
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #fff;
+  }
+  
+  .navbar-nav .nav-link.active {
+    color: #ffcc00;
+  }
+  
+  .nav-signup{
+    background-color: #6a11cb !important;
+    color: #fff !important;
+    border-color: #6a11cb !important;
+  }
+  .nav-signup:hover{
+    background-color: #1b1e2b !important;
+    border-color: white !important;
+  }
+  
+  .nav-signin{
+    border-color: white !important;
+    color: white !important;
+  }
+  .nav-signin:hover{
+    /* border: white; */
+    background-color: white !important;
+    color: #1b1e2b !important;
+  }
+  
+  /* Hero Section */
+  .hero {
+    height: 700px;
     display: flex;
-    justify-content: center;
+    /* width: 60%; */
     align-items: center;
-}
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .hero-content {
+    background: url('../assets/roommates.jpg') no-repeat center center/cover;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    /* width: 90%; */
+    height: 700px;
+    width: 1400px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .hero-text-info{
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .hero .highlight {
+    color: #6a11cb !important;
+  }
+  
+  .search-box button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+  
+  .search-form select,
+  .search-form input {
+    border-radius: 5px;
+    background-color: #1c2238 !important;
+    color: white !important;
+    width: 30%;
+  }
+  
+  .search-form button {
+    background-color: #6a11cb;
+    color: #fff;
+    border-color: #6a11cb;
+  }
+  .search-form button:hover{
+    background-color: #1b1e2b;
+    border-color: white;
+    color: black !important;
+  }
+  
+  .form-button.hero,
+  .room-find-button,
+  .people-find-button{
+    background-color: #6a11cb !important;
+    color: #fff;
+    border-color: #6a11cb !important;
+  }
+  
+  .form-button.hero:hover,
+  .room-find-button:hover,
+  .people-find-button:hover{
+    background-color: #1b1e2b !important;
+    color: white;
+    border-color: white !important;
+  }
+  
+  /* Property Types Section */
+  .property-types h2 {
+    color: #6a11cb;
+  }
+  
+  .property-card {
+    background-color: #2c2c2e !important;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    height: 90% !important;
+  }
+  
+  .property-card-container{
+    display: grid;
+    grid-template-columns: 4;
+  }
+  
+  .property-icon {
+    width: 80% !important;
+    height: auto !important;
+    margin-bottom: 10px;
+    filter: invert(1);
+  }
+  
+  .property-card h5 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  .property-card p {
+    color: #bbb;
+    margin-top: 5px;
+  }
+  /*end of dashboard page*/
+  
+  
+  
+  /*Property Page*/
+  body {
+    background-color: #1b1e2b;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .popular-property-deals {
+    color: #fff;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  
+  .property-card {
+    background-color: #2a2e42;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .property-card img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+  }
+  
+  .property-card .card-body {
+    padding: 15px;
+  }
+  
+  .property-card .badge {
+    font-size: 0.75rem;
+    background-color: #444a66;
+    margin-bottom: 10px;
+  }
+  
+  .property-details span {
+    display: block;
+    font-size: 0.9rem;
+    color: #b0b0c7;
+  }
+  
+  .property-details span i {
+    margin-right: 5px;
+  }
+  
+  .price-view {
+    font-weight: bold;
+  }
+  
+  .price {
+    font-size: 1.1rem;
+  }
+  
+  
+  .btn-outline-light {
+    color: #fff;
+    border-color: #ffffff50;
+  }
+  
+  .btn-outline-light:hover {
+    background-color: #ffffff20;
+    border-color: #fff;
+  }
+  
+  .deals-button{
+    background-color: #6a11cb !important;
+    border-color: #6a11cb !important;
+    color: white !important;
+  }
+  
+  .deals-button:hover{
+    border-color: white !important;
+    color: white;
+    background-color: #1b1e2b !important;
+  
+  }
+  
+  /*end of property page*/
+  
+  
+  
+  /*start of reviews page*/
+  .body { 
+    background-color: #0c112b; 
+    color: rgb(0, 0, 0); 
+    font-family: 'Arial', sans-serif; 
+  } 
+  
+  .reviews-section { 
+    padding: 50px 0; 
+  } 
+  
+  .card { 
+    background-color: #6a11cb; 
+    border: none; 
+    border-radius: 10px; 
+    padding: 20px; 
+    width: 250px; 
+  } 
+  .review-card { 
+    background-color: #2c2c2e !important; 
+    border: none; 
+    border-radius: 10px; 
+    padding: 20px; 
+    width: 250px; 
+  } 
+  
+  .review-card p { 
+    font-size: 14px; 
+    color: #b0b5c2; 
+  } 
+  
+  .review-card h6 { 
+    font-size: 16px; 
+    margin-top: 10px; 
+    color: white; 
+  } 
+  .review-card .stars { 
+    margin-top: 5px; 
+    color: #f2c94c; 
+  } 
+  
+  .subscribe-box { 
+    padding: 30px; 
+    border-radius: 10px; 
+  } 
+  
+  
+  .subscribe-box h3 { 
+    margin-bottom: 20px; 
+    font-size: 24px; 
+  } 
+  
+  .subscribe-button{
+    background-color: #6a11cb !important;
+    color: white;
+    border-color: #6a11cb;
+  }
+  
+  .subscribe-button:hover{
+    background-color: #1b1e2b !important;
+    border-color: white !important;
+  
+  }
+  
+  .footer-section { 
+    background-color: #2c2c2e; 
+    padding: 40px 0;
+    width: 100%;
+  } 
+  
+  .footer-section ul { 
+    list-style-type: none; 
+    padding: 0; 
+  } 
+  
+  .footer-section ul li { 
+    font-size: 14px; 
+    margin-bottom: 5px; 
+  }
+  /*end of reviews page*/
+  
+  /*start of the about us page*/
+  
+  body {
+    background-color: #1b1e2b;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .about-us-section {
+    background-color: #1b1e2b;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  .text-primary {
+    color: #0056d8;
+  }
+  
+  .sub-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+  }
+  
+  .description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #b0b0c7;
+  }
+  
+  .accordion-button {
+    background-color: #2a2e42 !important;
+    color: #fff !important;
+  }
+  
+  .accordion-body {
+    background-color: #2a2e42 !important;
+    color: #fff !important;
+  }
+  
+  .image-box img {
+    border: 3px solid #2a2e42;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #b0b0c7;
+  }
+  
+  .btn-primary {
+    background-color: #0056d8;
+    border-color: #0056d8;
+  }
+  
+  .btn-primary:hover {
+    background-color: #004bb8;
+    border-color: #004bb8;
+  }
+  
+  /*end of about us page*/
+  

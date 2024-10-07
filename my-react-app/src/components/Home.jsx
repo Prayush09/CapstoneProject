@@ -1,16 +1,23 @@
 import React from 'react';
-import NavBar from './NavBar';
+import Navbar from './HomeComponents/Navbar';
+import HeroSection from './HomeComponents/HeroSection';
+import PropertyTypes from './HomeComponents/PropertyTypes';
+import PopularDeals from './HomeComponents/PopularDeals';
+import AboutUs from './HomeComponents/AboutUs';
+import Reviews from './HomeComponents/Reviews'
 import './Home.css'
 function Home() {
   return (
-    <>
-      <NavBar />
-      <div className="welcome">
-        {/* Add content or other components here */}
-        <h1>Welcome to the Home Page</h1>
-      </div>
-    </>
+    <div>
+      <Navbar />
+      <HeroSection />
+      <PropertyTypes />
+      <PopularDeals />
+      <AboutUs />
+      <Reviews />
+    </div>
   );
 }
 
 export default Home;
+
