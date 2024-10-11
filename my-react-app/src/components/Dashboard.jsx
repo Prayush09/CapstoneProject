@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import Navbar from './HomeComponents/Navbar';
 const Dashboard = () => {
   const [userData, setUserData] = useState(null);
 
@@ -24,6 +24,7 @@ const Dashboard = () => {
 
   return (
     <div className="">
+      <Navbar />
       <h1>Dashboard</h1>
       {userData ? (
         <div>Welcome, {userData.username}!</div>

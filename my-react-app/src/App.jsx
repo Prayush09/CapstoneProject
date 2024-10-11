@@ -6,6 +6,7 @@ import About from './components/About';
 import Review from './components/Review';
 import Blog from './components/Blog';
 import Login from './components/Login';
+import Contact from './components/Contact';
 import SignUp from './components/SignUp';
 import Dashboard from './components/Dashboard';
 import './App.css';
@@ -20,6 +21,7 @@ function App() {
 
         {/* Routes for NavBar elements */}
         <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/property" element={<Property />} />
         <Route path="/about" element={<About />} />
         <Route path="/review" element={<Review />} />

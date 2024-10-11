@@ -5,40 +5,92 @@ body {
     -webkit-text-fill-color: #fff;
     font-family: 'Arial', sans-serif;
   }
-  
+
   /* Navbar Styles */
-  .navbar-brand {
-    font-weight: bold;
-    color: #fff;
-  }
+ /* Custom mask for the navbar background */
+ .mask-custom {
+  background: rgba(255, 255, 255, 0.1); /* Soft transparent white background */
+  backdrop-filter: blur(15px); /* Smooth blur effect */
+  -webkit-backdrop-filter: blur(15px); /* Safari support */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
   
-  .navbar-nav .nav-link {
-    color: #fff;
-  }
+  /* Cylindrical shape */
+  border-radius: 50px; /* Creates the rounded, cylindrical look */
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 10px;
   
-  .navbar-nav .nav-link.active {
-    color: #ffcc00;
-  }
   
-  .nav-signup{
-    background-color: #6a11cb !important;
-    color: #fff !important;
-    border-color: #6a11cb !important;
-  }
-  .nav-signup:hover{
-    background-color: #1b1e2b !important;
-    border-color: white !important;
-  }
-  
-  .nav-signin{
-    border-color: white !important;
-    color: white !important;
-  }
-  .nav-signin:hover{
-    /* border: white; */
-    background-color: white !important;
-    color: #1b1e2b !important;
-  }
+  transition: backdrop-filter 0.5s ease;
+}
+
+.navbar-nav{
+  border-radius: inherit;
+}
+
+/* Navbar brand styling */
+.navbar-brand {
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Spacing between nav links */
+.navbar-nav .nav-item {
+  margin-right: 20px; /* Adds spacing between the navbar links */
+}
+
+/* Normal nav link style */
+.navbar-nav .nav-link {
+  color: #fff;
+  position: relative; /* Needed for underline highlight */
+  padding: 5px 0;
+}
+
+/* Active link */
+.navbar-nav .nav-link.active {
+  color: #ffcc00; /* Active state color */
+}
+
+/* Hover underline effect */
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #007bff; /* Blue underline */
+  transition: width 0.3s ease; /* Smooth transition for underline */
+}
+
+/* Underline on hover */
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Sign-up button */
+.nav-signup {
+  border-color: white !important;
+  color: white !important;
+}
+
+.nav-signup:hover {
+  background-color: white !important;
+  color: #1b1e2b !important;
+}
+
+/* Sign-in button */
+.nav-signin {
+  background-color: #6a11cb !important; /* Primary color */
+  color: #fff !important;
+  border-color: #6a11cb !important;
+}
+
+.nav-signin:hover {
+  background-color: white !important;
+  color: #1b1e2b !important;
+}
+
   
   /* Hero Section */
   .hero {

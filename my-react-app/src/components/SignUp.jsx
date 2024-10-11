@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Navbar from './HomeComponents/Navbar';
 {/* Create a Preferences page which will be used in the ml model */}
 const SignUp = () => {
   const [username, setUsername] = useState('');
@@ -41,6 +42,8 @@ const SignUp = () => {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="form-container">
       <h2>Sign Up</h2>
       <form onSubmit={handleSubmit}>
@@ -129,6 +132,7 @@ const SignUp = () => {
         <button type="submit">Sign Up</button>
       </form>
     </div>
+    </>
   );
 };
 

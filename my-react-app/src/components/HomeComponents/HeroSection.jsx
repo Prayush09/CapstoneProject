@@ -4,7 +4,7 @@ import '../Home.css'
 const HeroSection = () => {
   return (
     <section className="hero">
-      <div className="hero-content text-center">
+      <div className="hero-content text-center mt-1">
         <div className="hero-text-info">
         <h1>Find Your Ideal <br /><span className="highlight">Roommate</span></h1>
         <p>"In the cookie of life, friends are the chocolate chips" - Sun Tzu</p>

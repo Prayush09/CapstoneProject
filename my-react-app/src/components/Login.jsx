@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // For navigation
-
+import Navbar  from './HomeComponents/Navbar';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -29,6 +29,8 @@ const Login = () => {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="form-container">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
@@ -55,6 +57,7 @@ const Login = () => {
         <button type="submit">Login</button>
       </form>
     </div>
+    </>
   );
 };
 

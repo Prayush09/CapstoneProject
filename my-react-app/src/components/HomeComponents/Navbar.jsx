@@ -1,12 +1,15 @@
 import React from 'react';
-import '../Home.css'
-import {Link} from 'react-router-dom'
+import '../Home.css';
+import { Link } from 'react-router-dom';
+import homeeyLogo from '../../assets/Homeey-logo.png';
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-light shadow-5-strong mask-custom p-2 fixed-top">
       <div className="container">
-        <Link className="navbar-brand" to="/">HOMEEY</Link>
+        <Link className="navbar-brand" to="/">
+          <img src={homeeyLogo} alt="Homeey Logo" />
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -24,7 +27,7 @@ const Navbar = () => {
               <Link className="nav-link" to="/property">Property</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" to="/about">About</Link>
+              <Link className="nav-link" to="/about">About</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/review">Review</Link>
@@ -33,11 +36,11 @@ const Navbar = () => {
               <Link className="nav-link" to="/blog">Blog</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" to="">Contact</a>
+              <a className="nav-link" href="/contact">Contact</a>
             </li>
           </ul>
-          <Link className="btn nav-signin me-2" to="login">Sign in</Link>
-          <Link className="btn nav-signup" to="/signup">Sign up</Link>
+          <Link className="btn nav-signup me-3" to="/signup">Sign up</Link>
+          <Link className="btn nav-signin" to="/login">Sign in</Link>
         </div>
       </div>
     </nav>
