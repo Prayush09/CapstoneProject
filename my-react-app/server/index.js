@@ -93,7 +93,7 @@ app.post('/login', async (req, res) => {
     }
 });
 
-app.get('/protected-route', authenticateToken, (req, res) => {
+app.get('/preferences', authenticateToken, (req, res) => {
     res.json({
         message: "This is protected data",
         userName: req.userName,

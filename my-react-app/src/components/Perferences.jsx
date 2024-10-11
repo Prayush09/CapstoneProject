@@ -3,8 +3,7 @@ import Navbar from './HomeComponents/Navbar';
 import './stylesheets/preferences.css';
 
 const Preferences = () => {
-  const [expandedCategory, setExpandedCategory] = useState(null);
-
+  
   const categories = [
     {
       title: "Sports & Fitness",
@@ -79,9 +78,7 @@ const Preferences = () => {
     },
   ];
 
-  const handleCategoryClick = (index) => {
-    setExpandedCategory(expandedCategory === index ? null : index);
-  };
+  
 
   return (
     <>
@@ -89,15 +86,15 @@ const Preferences = () => {
       <div className="container-preferences">
         <h1>What are your hobbies?</h1>
         <br />
-        {categories.map((category, index) => (
-          <div key={index} className="category">
-            <h2 onClick={() => handleCategoryClick(index)} className="category-title">
+        {categories.map((category) => (
+          <div className="category">
+            <h2 className="category-title">
               {category.title}
             </h2>
-            {expandedCategory === index && (
+            {(
               <div className="button-container">
-                {category.subCategories.map((subCategory, subIndex) => (
-                  <button key={subIndex} className="blur-button">
+                {category.subCategories.map((subCategory) => (
+                  <button className="blur-button">
                     {subCategory}
                   </button>
                 ))}
