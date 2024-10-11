@@ -2,7 +2,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import '../Home.css'
+import '../stylesheets/Home.css'
 
 const AboutUs = () => {
     return (

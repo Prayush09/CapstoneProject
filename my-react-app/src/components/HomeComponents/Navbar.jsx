@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Home.css';
+import '../stylesheets/Home.css';
 import { Link } from 'react-router-dom';
 import homeeyLogo from '../../assets/Homeey-logo.png';
 

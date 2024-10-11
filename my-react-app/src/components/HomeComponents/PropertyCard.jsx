@@ -1,7 +1,7 @@
 // Card.js
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../Home.css'; // Import your CSS file
+import '../stylesheets/Home.css'; // Import your CSS file
 
 const PropertyCard = ({ image, title, address, bedrooms, bathrooms, price, isForSale }) => {
     return (

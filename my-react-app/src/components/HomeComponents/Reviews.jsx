@@ -1,7 +1,7 @@
 // src/Reviews.js
 import React from 'react';
 import ReviewCard from './ReviewCard';
-import '../Home.css'
+import '../stylesheets/Home.css'
 
 const Reviews = () => {
     const reviews = [

@@ -1,6 +1,6 @@
 // src/ReviewCard.js
 import React from 'react';
-import '../Home.css'
+import '../stylesheets/Home.css'
 
 const ReviewCard = ({ review }) => {
     return (

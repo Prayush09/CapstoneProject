@@ -1,0 +1,97 @@
+/* Define base styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #1b1e2b;
+    color: #ddd;
+  }
+  
+  /* Create a variable for color scheme */
+  :root {
+    --primary: #6a11cb;
+    --secondary: #47268c;
+    --text-color: white;
+    --background-dark: #2a2d3e;
+    --border-color: #444;
+  }
+  
+  /* Form container styles */
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  /* Form card styles */
+  .form-card {
+    background-color: var(--background-dark);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    width: 360px;
+  }
+  
+  /* Form title styles */
+  .form-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  
+  /* Input field styles */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select {
+    width: 100%;
+    padding: 8px 12px; /* Combine padding properties */
+    margin-bottom: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: #1d2235; /* Darker input background */
+    color: var(--text-color);
+    font-size: 0.95rem;
+  }
+  
+  /* Input focus styles */
+  input:focus,
+  select:focus {
+    border-color: var(--primary);
+    outline: none;
+  }
+  
+  /* Button styles */
+  .signup-btn {
+    background-color: var(--primary);
+    color: var(--text-color);
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    width: 100%;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+  }
+  
+  /* Button hover styles */
+  .signup-btn:hover {
+    background-color: var(--secondary);
+    color: var(--text-color);
+  }
+  
+  /* Link styles */
+  .link {
+    color: var(--primary);
+    text-align: center;
+    display: block;
+    margin-top: 12px;
+    font-size: 0.9rem;
+  }
+  
+  /* Link hover styles */
+  .link:hover {
+    text-decoration: underline;
+  }

@@ -8,6 +8,7 @@ import Blog from './components/Blog';
 import Login from './components/Login';
 import Contact from './components/Contact';
 import SignUp from './components/SignUp';
+import Preferences from './components/Perferences'
 import Dashboard from './components/Dashboard';
 import './App.css';
 
@@ -18,7 +19,7 @@ function App() {
         {/* Routes for Login and SignUp */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-
+        <Route path="/preferences" element={<Preferences />} />
         {/* Routes for NavBar elements */}
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />

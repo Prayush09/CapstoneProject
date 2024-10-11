@@ -1,7 +1,7 @@
 // PropertyDeals.js
 import React from 'react';
 import PropertyCard from './PropertyCard.jsx';
-import '../Home.css'
+import '../stylesheets/Home.css'
 import defaulthouseimg from '../../assets/defaulthouse.jpg'
 
 const PropertyDeals = () => {

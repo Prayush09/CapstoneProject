@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Home.css'
+import '../stylesheets/Home.css'
 import hotelicon from '../../assets/hotel.png';
 import houseicon from '../../assets/house.png';
 import roomicon from '../../assets/room.png';
